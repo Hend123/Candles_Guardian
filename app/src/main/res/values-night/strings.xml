@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ولى الأمر</string>
+    <string name="user_name">اسم المستخدم</string>
+    <string name="password">الرقم السري</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="remember_me">تذكرنى</string>
+    <string name="candles_logo">candles logo</string>
+    <string name="forgetPassword">هل نسيت الرقم السرى؟</string>
+    <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="errorUserName">اسم المستخدم ليس صحيح!</string>
+    <string name="errorPassword">كلمة السر خطأ!</string>
+    <string name="errorConnection">خطأ فى الاتصال!</string>
+    <string name="success">نجح!</string>
+    <string name="errorEmptyFeilds">رجاء ملأ كل الدخلات!</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="childernList">Childern List</string>
+    <string name="chat">Chat</string>
+    <string name="notifications">Notifications</string>
+    <string name="childernrv">childernRv</string>
+
+</resources>
