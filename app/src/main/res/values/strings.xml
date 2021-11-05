@@ -17,6 +17,11 @@
     <string name="chat">Chat</string>
     <string name="notifications">Notifications</string>
     <string name="childernrv">childernRv</string>
+    <string name="notes">الملاحظات</string>
+    <string name="behaviourNotes">الملاحظات السلوكية</string>
+    <string name="eductionalNotes">الملاحظات التعليمية</string>
+    <string name="absence">الغياب</string>
+    <string name="fees">المصاريف</string>
 
 
 </resources>

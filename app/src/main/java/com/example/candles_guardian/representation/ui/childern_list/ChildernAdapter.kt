@@ -19,7 +19,9 @@ class ChildernAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     interface OnItemClickListener {
-        fun onClick(position: Int)
+        //fun onClick(position: Int)
+        fun onClickingMenu(position: Int,v:View)
+
     }
 
     fun setOnItemClickListener(onItemClickListLener: OnItemClickListener) {
@@ -53,14 +55,22 @@ class ChildernAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root), View.OnClickListener {
         fun bind(item: Stu) {
             binding.stuItem = item
-            binding.root.setOnClickListener(this)
-            binding.root.setClickable(true)
+//            binding.root.setOnClickListener(this)
+//            binding.root.setClickable(true)
+            binding.menuIc.setOnClickListener(this)
+            binding.menuIc.isClickable = true
             binding.executePendingBindings()
         }
 
         override fun onClick(v: View?) {
             if (onItemClickListener != null) {
-                onItemClickListener.onClick(adapterPosition)
+                if (v == binding.menuIc) {
+                    onItemClickListener.onClickingMenu(adapterPosition,v)
+//                }else{
+//                    onItemClickListener.onClick(adapterPosition)
+//
+//                }
+                }
             }
         }
     }

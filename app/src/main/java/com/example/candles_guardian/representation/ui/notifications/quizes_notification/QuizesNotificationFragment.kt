@@ -1,57 +1,52 @@
-package com.example.candles_guardian.representation.ui.notifications
+package com.example.candles_guardian.representation.ui.notifications.quizes_notification
 
+import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.example.candles_guardian.R
 import com.example.candles_guardian.databinding.FragmentNotificationsBinding
+import com.example.candles_guardian.databinding.QuizesNotificationFragmentBinding
+import com.example.candles_guardian.representation.ui.notifications.NotificationsViewModel
 import com.example.retrofitandcoroutine.data.remote.RetrofitClient
 import com.example.weatherforecast.data.remote.ApiHelperImpl
 import com.example.weatherforecast.utils.Status
 import kotlinx.coroutines.flow.collect
 
-class NotificationsFragment : Fragment() {
+class QuizesNotificationFragment : Fragment() {
+    private var _binding: QuizesNotificationFragmentBinding? = null
+    private lateinit var viewModel: QuizesNotificationViewModel
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
-    private var _binding: FragmentNotificationsBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    companion object {
+        fun newInstance() = QuizesNotificationFragment()
+    }
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View{
+    ): View? {
+        _binding = QuizesNotificationFragmentBinding.inflate(inflater, container, false)
+        init()
 
-
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
-        //init()
-//        lifecycleScope.launchWhenStarted {
-//            getHWNotification("1", "1", "1440")
-//        }
-
+        lifecycleScope.launchWhenStarted {
+            getHWNotification("1", "1", "1440")
+        }
 
         return binding.root
     }
 
+
     private fun init() {
-        notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
-        notificationsViewModel.setAtrribute(ApiHelperImpl(RetrofitClient.getApiService()))
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        binding.viewPager.adapter = PageAdapter(requireActivity().supportFragmentManager)
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
-
+        viewModel = ViewModelProvider(this).get(QuizesNotificationViewModel::class.java)
+        viewModel.setAtrribute(ApiHelperImpl(RetrofitClient.getApiService()))
     }
 
     private suspend fun getHWNotification(
@@ -59,8 +54,8 @@ class NotificationsFragment : Fragment() {
         classRoomId: String,
         batchNumber: String
     ) {
-        notificationsViewModel.getHWNotification(classId, classRoomId, batchNumber)
-        notificationsViewModel.hwNotificationResponse.collect {
+        viewModel.getHWNotification(classId, classRoomId, batchNumber)
+        viewModel.hwNotificationResponse.collect {
             it.let {
                 //binding.progressBar.visibility = View.VISIBLE
                 when (it.status) {
@@ -93,9 +88,9 @@ class NotificationsFragment : Fragment() {
 
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }

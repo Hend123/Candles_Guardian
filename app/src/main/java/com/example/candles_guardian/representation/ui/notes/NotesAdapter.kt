@@ -1,13 +1,10 @@
-package com.example.candles_guardian.representation.ui.details
+package com.example.candles_guardian.representation.ui.notes
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.candles_guardian.databinding.ChildernItemBinding
 import com.example.candles_guardian.databinding.StuBehaviourNoteItemBinding
-import com.example.candles_guardian.pojo.Stu
 import com.example.candles_guardian.pojo.StuBehaviourNote
 
 class NotesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -25,7 +22,7 @@ class NotesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     fun setDataAndContext(noteList: List<StuBehaviourNote>, context: Context) {
         this.noteList = noteList
         this.context = context
-        notifyDataSetChanged()
+        //notifyDataSetChanged()
     }
 
 

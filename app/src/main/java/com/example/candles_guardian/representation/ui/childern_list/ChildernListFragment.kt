@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -133,12 +134,41 @@ class ChildernListFragment : Fragment(), ChildernAdapter.OnItemClickListener {
         _binding = null
     }
 
-    override fun onClick(position: Int) {
+//    override fun onClick(position: Int) {
+//        val childernItem = bundleOf("childernItem" to stu[position])
+//        findNavController().navigate(
+//            R.id.action_childernListFragment_to_detailsFragment2,
+//            childernItem
+//        )
+//
+//    }
+
+    override fun onClickingMenu(position: Int, v: View) {
         val childernItem = bundleOf("childernItem" to stu[position])
-        findNavController().navigate(
-            R.id.action_childernListFragment_to_detailsFragment2,
-            childernItem
-        )
+        val popupMenu = PopupMenu(requireContext(), v)
+        popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
+        popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.notesFragment2 ->
+                    findNavController().navigate(
+                        R.id.action_childernListFragment_to_notesFragment2,
+                        childernItem
+                    )
+                R.id.absenceFragment2 ->
+                    findNavController().navigate(
+                        R.id.action_childernListFragment_to_absenceFragment2,
+                        childernItem
+                    )
+                R.id.feesFragment2 ->
+                    findNavController().navigate(
+                        R.id.action_childernListFragment_to_feesFragment2,
+                        childernItem
+                    )
+            }
+            true
+        })
+        popupMenu.show()
+
 
     }
 }

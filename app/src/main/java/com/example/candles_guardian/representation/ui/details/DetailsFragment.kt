@@ -7,27 +7,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.candles_guardian.R
 import com.example.candles_guardian.databinding.DetailsFragmentBinding
-import com.example.candles_guardian.databinding.FragmentChildernListBinding
 import com.example.candles_guardian.pojo.Fees
 import com.example.candles_guardian.pojo.Stu
 import com.example.candles_guardian.pojo.StuBehaviourNote
-import com.example.candles_guardian.representation.ui.childern_list.ChildernListViewModel
+import com.example.candles_guardian.representation.ui.notes.NotesAdapter
 import com.example.retrofitandcoroutine.data.remote.RetrofitClient
 import com.example.weatherforecast.data.remote.ApiHelperImpl
 import com.example.weatherforecast.utils.Resource
 import com.example.weatherforecast.utils.Status
-import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 
 class DetailsFragment : Fragment() {
     private lateinit var childernItem: Stu
