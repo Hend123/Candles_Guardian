@@ -22,6 +22,24 @@
     <string name="eductionalNotes">الملاحظات التعليمية</string>
     <string name="absence">الغياب</string>
     <string name="fees">المصاريف</string>
+    <string name="feesLabel">المصاريف</string>
+    <string name="examTypeLabel">الامتحان #</string>
+    <string name="expiresDateExam">نهاية الاختبار</string>
+    <string name="startDateExam">بداية الاختبار</string>
+    <string name="classRoomNameLabel">الحجرة:</string>
+    <string name="classNameLabel">الصف:</string>
+    <string name="subjectLabel">المادة:</string>
+    <string name="quizesrv">quizesRv</string>
+    <string name="rightAnswerLabel">عدد الاجابات الصحيحة</string>
+    <string name="errorLabel">عدد الاجابات الخطئة</string>
+    <string name="successLabel">ناجح</string>
+    <string name="degree">الدرجة</string>
+    <string name="quizesResultRv">quizes Result Rv</string>
+    <string name="absenceLabel">الغياب</string>
+    <string name="sendSmsLabel">يوجد رسالة:</string>
+    <string name="smsMobileLabel">رقم التليفون:</string>
+    <string name="smsTextLabel">محتوى الرسالة:</string>
+    <string name="remarksLabel">التعليق:</string>
 
 
 </resources>

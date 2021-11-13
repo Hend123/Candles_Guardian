@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/bg.xml" value="0.2005" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/childern_details_bg.xml" value="0.1835" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/circlar_image.xml" value="0.1835" />
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/custom_background.xml" value="0.2005" />
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/custom_bg_tv.xml" value="0.2005" />
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/custom_btn.xml" value="0.2005" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/ic_childimg.xml" value="0.1835" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/ic_menu.xml" value="0.191" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/drawable/ic_wave.xml" value="0.1945" />
@@ -12,18 +16,21 @@
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout-land/activity_home.xml" value="0.1728395061728395" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout-land/fragment_childern_list.xml" value="0.1728395061728395" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/absence_fragment.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/absence_item.xml" value="0.20153985507246377" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/activity_home.xml" value="0.21" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/behaviour_notes_fragment.xml" value="0.1983695652173913" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/childern_item.xml" value="0.33" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/details_fragment.xml" value="0.25" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/eductional_notes_fragment.xml" value="0.1983695652173913" />
-        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/fees_fragment.xml" value="0.13949275362318841" />
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/fees_fragment.xml" value="0.17" />
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/fees_item.xml" value="0.25" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/fragment_chat.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/fragment_childern_list.xml" value="0.1" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/fragment_notifications.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/notes_fragment.xml" value="0.13949275362318841" />
-        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/quiz_result.xml" value="0.20199275362318841" />
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/quiz_result.xml" value="0.5" />
+        <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/quizes_item.xml" value="0.25" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/quizes_notification_fragment.xml" value="0.20199275362318841" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/quizes_result_notification_fragment.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/HI-TECH/Desktop/Candles_Guardian/app/src/main/res/layout/stu_behaviour_note_item.xml" value="0.25" />

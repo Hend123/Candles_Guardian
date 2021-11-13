@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="feesItem"
+            type="com.example.candles_guardian.pojo.Fees" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        app:cardBackgroundColor="@color/gray_"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/feesType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{feesItem.feesType}"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="قسط اول رسوم دراسية" />
+
+            <TextView
+                android:id="@+id/feesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/feesLabel"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/feesType" />
+
+            <TextView
+                android:id="@+id/fees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:text="@{String.valueOf(feesItem.feesAmount)}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feesType"
+                tools:text="8000" />
+
+            <TextView
+                android:id="@+id/vatLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="القيمة المضافة:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/feesLabel"
+                app:layout_constraintTop_toBottomOf="@id/feesLabel" />
+
+            <TextView
+                android:id="@+id/vat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{String.valueOf(feesItem.vatAmount)}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/fees"
+                app:layout_constraintTop_toBottomOf="@id/fees"
+                tools:text="400" />
+
+            <TextView
+                android:id="@+id/discountTypeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="نوع الخصم:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/vatLabel"
+                app:layout_constraintTop_toBottomOf="@+id/vatLabel" />
+
+            <TextView
+                android:id="@+id/discountType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:maxLines="2"
+                android:text="@{feesItem.discountType}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/discountTypeLabel"
+                app:layout_constraintStart_toStartOf="@id/vat"
+                app:layout_constraintTop_toBottomOf="@id/vat"
+                tools:text="حصول الطالب على امتياز فى السنة الاخيرة.mmmmmmmmmmmmm" />
+
+            <TextView
+                android:id="@+id/discountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="قيمة الخصم:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/discountTypeLabel"
+                app:layout_constraintTop_toBottomOf="@+id/discountType" />
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{String.valueOf(feesItem.discountAmount)}"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/discountType"
+                app:layout_constraintTop_toBottomOf="@id/discountType"
+                tools:text="400" />
+
+            <TextView
+                android:id="@+id/paidAmountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="74dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/custom_bg_tv"
+                android:padding="4dp"
+                android:text="المبلغ الكلى:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/discountLabel"
+                app:layout_constraintTop_toBottomOf="@id/discountLabel"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/paidAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_bg_tv"
+                android:padding="4dp"
+                android:text="@{String.valueOf(feesItem.paidAmount)}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/paidAmountLabel"
+                app:layout_constraintEnd_toStartOf="@+id/paidAmountLabel"
+                app:layout_constraintTop_toTopOf="@+id/paidAmountLabel"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="8000" />
+
+            <TextView
+                android:id="@+id/dateTrans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="16dp"
+                android:text="@{feesItem.transDate}"
+                android:textColor="@color/gray__"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/paidAmount" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/balanceAmountLabel"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="4dp"-->
+            <!--                android:text="الرصيد بمبلغ: "-->
+            <!--                app:layout_constraintEnd_toEndOf="@+id/discountLabel"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/discountLabel" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/balanceAMount"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginEnd="4dp"-->
+            <!--                android:text="@{String.valueOf(feesItem.balanceAmount)}"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/balanceAmountLabel"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/balanceAmountLabel"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/balanceAmountLabel" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/debitBalanceLabel"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="4dp"-->
+            <!--                android:text="مدين بمبلغ: "-->
+            <!--                app:layout_constraintEnd_toEndOf="@+id/paidAmountLabel"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/paidAmountLabel" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/debitBalance"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginEnd="4dp"-->
+            <!--                android:text="@{String.valueOf(feesItem.debitBalance)}"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/debitBalanceLabel"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/debitBalanceLabel"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/debitBalanceLabel" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/creditBalanceLabel"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="18dp"-->
+            <!--                android:layout_marginBottom="16dp"-->
+            <!--                android:text="مدين بمبلغ: "-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="@+id/balanceAmountLabel"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/balanceAmountLabel" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/creditBalance"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginEnd="4dp"-->
+            <!--                android:text="@{String.valueOf(feesItem.creditBalance)}"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/creditBalanceLabel"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/creditBalanceLabel"-->
+            <!--                app:layout_constraintTop_toTopOf="@id/creditBalanceLabel" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

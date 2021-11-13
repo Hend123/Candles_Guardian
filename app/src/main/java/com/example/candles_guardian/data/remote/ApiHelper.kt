@@ -21,6 +21,8 @@ interface ApiHelper {
         classRoomId: String,
         batchNumber: String
     ): List<HWNotification>
+    suspend fun getAbsence( userName: String): List<Absence>
+
 
 
 }

@@ -9,6 +9,7 @@ data class HWNotification(
     @SerializedName("Subjects_Name") val subjects_Name: String,
     @SerializedName("User_Full_Name_Ar") val user_Full_Name_Ar: String,
     @SerializedName("Type_Name") val type_Name: String,
+    @SerializedName("Exam_Type") val exam_Type: String,
     @SerializedName("Origin_Date") val origin_Date: String,
     @SerializedName("Status_Date") val status_Date: String,
     @SerializedName("Start_Date") val start_Date: String,

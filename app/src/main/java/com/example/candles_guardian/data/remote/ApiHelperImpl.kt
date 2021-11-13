@@ -30,4 +30,7 @@ class ApiHelperImpl(private val apiService: ApiService) : ApiHelper {
         batchNumber: String
     ): List<HWNotification> =
         apiService.getHWNotification(classId, classRoomId, batchNumber)
+
+    override suspend fun getAbsence(userName: String): List<Absence> =
+        apiService.getAbsence(userName)
 }

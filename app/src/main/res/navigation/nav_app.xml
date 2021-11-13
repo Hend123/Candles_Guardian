@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_notificationsFragment_to_childernListFragment"
             app:destination="@id/childernListFragment" />
+        <argument
+            android:name="childernItem"
+            app:argType="com.example.candles_guardian.pojo.Stu" />
     </fragment>
     <fragment
         android:id="@+id/absenceFragment2"

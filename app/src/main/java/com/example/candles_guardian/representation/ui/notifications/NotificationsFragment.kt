@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.candles_guardian.R
 import com.example.candles_guardian.databinding.FragmentNotificationsBinding
+import com.example.candles_guardian.pojo.Stu
 import com.example.retrofitandcoroutine.data.remote.RetrofitClient
 import com.example.weatherforecast.data.remote.ApiHelperImpl
 import com.example.weatherforecast.utils.Status
@@ -23,6 +24,14 @@ class NotificationsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+//    private lateinit var childernItem: Stu
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        arguments?.let {
+//            childernItem = it.getParcelable<Stu>("childernItem")!!
+//            Log.v("childern", childernItem.toString())
+//        }
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +45,8 @@ class NotificationsFragment : Fragment() {
 //        lifecycleScope.launchWhenStarted {
 //            getHWNotification("1", "1", "1440")
 //        }
-
+        binding.viewPager.adapter = PageAdapter(childFragmentManager)
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
 
         return binding.root
     }
@@ -49,8 +59,6 @@ class NotificationsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        binding.viewPager.adapter = PageAdapter(requireActivity().supportFragmentManager)
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
 
     }
 

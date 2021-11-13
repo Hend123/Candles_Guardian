@@ -3,10 +3,11 @@ package com.example.candles_guardian.representation.ui.notifications
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentStatePagerAdapter
 import com.example.candles_guardian.representation.ui.notifications.quizes_notification.QuizesNotificationFragment
 import com.example.candles_guardian.representation.ui.notifications.quizes_result_notification.QuizesResultNotificationFragment
 
-class PageAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class PageAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     override fun getCount(): Int {
        return 2
     }

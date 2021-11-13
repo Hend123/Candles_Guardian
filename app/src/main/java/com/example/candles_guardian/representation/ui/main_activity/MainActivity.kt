@@ -126,8 +126,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun checkLogin(userName: String, password: String) {
-        mainActivityViewModel.loginUser(userName, password)
-        mainActivityViewModel.loginUserResponse.collect {
+        mainActivityViewModel.loginUser(userName, password).collect {
             it?.let {
                 progressBar.visibility = View.VISIBLE
                 when (it.status) {

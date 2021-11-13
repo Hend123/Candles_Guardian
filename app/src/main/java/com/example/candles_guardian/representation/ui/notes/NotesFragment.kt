@@ -24,14 +24,15 @@ class NotesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = NotesFragmentBinding.inflate(inflater, container, false)
+        init()
+        binding.viewPager.adapter = PageAdapterNotes(childFragmentManager)
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        init()
-        binding.viewPager.adapter = PageAdapterNotes(requireActivity().supportFragmentManager)
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
+
     }
 
     private fun init() {

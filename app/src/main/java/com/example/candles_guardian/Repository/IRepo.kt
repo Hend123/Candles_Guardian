@@ -22,6 +22,8 @@ interface IRepo {
         classRoomId: String,
         batchNumber: String
     ): MutableStateFlow<Resource<List<HWNotification>>>
+    suspend fun getAbsence(userName: String): MutableStateFlow<Resource<List<Absence>>>
+
 
 
 }

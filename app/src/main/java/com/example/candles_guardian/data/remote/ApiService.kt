@@ -36,4 +36,7 @@ interface ApiService {
         @Query("batchNumber") batchNumber: String
     ): List<HWNotification>
 
+    @GET("StudentAbsence/GetUserAbsence")
+    suspend fun getAbsence(@Query("username") userName: String): List<Absence>
+
 }

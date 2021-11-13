@@ -17,6 +17,7 @@ class Repo : IRepo {
     private var feesResponse: MutableStateFlow<Resource<List<Fees>>>
     private var quizResultResponse: MutableStateFlow<Resource<List<QuizResult>>>
     private var hwNotificationResponse: MutableStateFlow<Resource<List<HWNotification>>>
+    private var absenceResponse: MutableStateFlow<Resource<List<Absence>>>
 
 
     //    constructor(apiHelper: ApiHelper) : this() {
@@ -32,6 +33,7 @@ class Repo : IRepo {
         feesResponse = MutableStateFlow(Resource.loading(null))
         quizResultResponse = MutableStateFlow(Resource.loading(null))
         hwNotificationResponse = MutableStateFlow(Resource.loading(null))
+        absenceResponse = MutableStateFlow(Resource.loading(null))
 
     }
 
@@ -179,6 +181,25 @@ class Repo : IRepo {
             }
         }
         return hwNotificationResponse
+    }
+
+    override suspend fun getAbsence(userName: String): MutableStateFlow<Resource<List<Absence>>> {
+        GlobalScope.launch {
+            Dispatchers.IO
+            absenceResponse.emit(Resource.loading(null))
+            try {
+                val response = mApiHelper!!.getAbsence(userName)
+                withContext(Dispatchers.Main) {
+                    absenceResponse.emit((Resource.success(response)))
+                    Log.v("absenceResponse", absenceResponse.value.toString())
+                }
+
+            } catch (e: Exception) {
+                Log.e("absenceResponse", e.toString())
+                absenceResponse.emit(Resource.error(e.toString(), null))
+            }
+        }
+        return absenceResponse
     }
 
 }
